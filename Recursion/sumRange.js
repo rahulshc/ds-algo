@@ -5,4 +5,4 @@ function sumRange( num )
     return num + sumRange( num - 1 );
 }
 
-console.log( sumRange( 10000000 ) );
+console.log( sumRange( 10 ) );
