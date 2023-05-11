@@ -20,8 +20,23 @@ function flatten(){
 
     return new_arr.concat( flatten( arguments[0].slice( 1 ) ));
   }
+
+  function flattenV2(){
+    // add whatever parameters you deem necessary - good luck!
+
+    let new_arr = [];
+
+    for( let i=0; i< arguments[0].length; i++)
+    {
+        if( Array.isArray(arguments[0][i])) new_arr = new_arr.concat( flattenV2( arguments[0][i]));
+
+        else new_arr.push( arguments[0][i] );
+    }
+
+    return new_arr;
+  }
   
-  //console.log( flatten([1, 2, 3, [4,5], 6 ]) ); // [1, 2, 3, 4, 5]
-  //console.log( flatten([1, [2, [3, 4], [[5]]]]) ); // [1, 2, 3, 4, 5]
-  //console.log( flatten([[1],[2],[3]]) ); // [1,2,3]
-  console.log( flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]) ); // [1,2,3]
+  console.log( flattenV2([1, 2, 3, [4,5], 6 ]) ); // [1, 2, 3, 4, 5]
+  console.log( flattenV2([1, [2, [3, 4], [[5]]]]) ); // [1, 2, 3, 4, 5]
+  console.log( flattenV2([[1],[2],[3]]) ); // [1,2,3]
+  console.log( flattenV2([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]) ); // [1,2,3]
