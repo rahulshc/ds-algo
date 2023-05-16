@@ -1,4 +1,4 @@
-function selectionSort ( arr )
+function selectionSort ( arr ) //sorts from beginning
 {
     for ( let i = 0; i < arr.length; i++)
     {
@@ -21,5 +21,8 @@ function selectionSort ( arr )
 
     return arr;
 }
+
+//better than bubble sort in no of swaps
+//worse than bubble sort in nearly sorted cases
 
 console.log( selectionSort( [ 5, 4, 3, 2, 1 ] ) );

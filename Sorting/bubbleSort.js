@@ -1,4 +1,4 @@
-function bubbleSort( arr ){
+function bubbleSort( arr ){ //sorts from last
     let noSwaps;
     for( let i = arr.length; i > 0; i--){
         noSwaps = true;
